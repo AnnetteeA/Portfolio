@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    color:black;
+    font-family: 'Lato', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6,span{
+    color:black;
+    text-align: center;
+    line-height: 1.25;
+}
+
+h1{
+    font-size: 36px;
+}
+
+p{
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+li{
+    list-style-type: none;
+}
+
+.flex{
+    display: flex; /* this automatically aligns like columns or rows with auto width and auto height */
+}
+
+.flex-1{
+    flex: 1; /* this makes sure that it is the entire height of the  page */
+
+}
+/* Navigation bar */
+
+.row{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text-pink{
+    color: 	#FF69B4 ;
+}
+
+
+nav{
+    height: 100px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+.nav__link--list{
+    display: flex;
+}
+
+.nav__link--anchor{
+    margin: 0 12px;
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav__link--anchor-primary{
+    background-color: 	#FF69B4;
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: white;
+    transition: all 300ms ease;
+}
+
+.nav__link--anchor-primary:hover{
+    background-color: #FF69B4;
+}
+
+.personal_logo{
+    font-size: 24px;
+    color: 	#FF69B4;
+    margin: 0 12px;
+    font-weight: bold;
+}
+
+/* About mE */
+#about-me{
+    min-height: 100vh; /* entire height of the page */
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me__info--container {
+    display: flex;
+    flex-direction: column; /* so it is not side-by-side */
+    align-items: center;
+}
+
+.about-me--picture--mask{
+    width: 180px;
+    height: 180px;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,1);
+    margin-bottom: 20px;
+
+    
+}
+
+.about-me__picture{
+    width: 100%;
+    padding-top: 7px;
+}
