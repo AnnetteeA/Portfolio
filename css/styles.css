@@ -30,6 +30,11 @@ p{
 a{
     text-decoration: none;
     position: relative;
+    transition: opacity 300ms ease;
+}
+
+i:hover{
+    opacity: 0.7;
 }
 
 .link__hover-effect:after {
@@ -73,6 +78,7 @@ li{
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 12px;
 }
 
 .text-pink{
@@ -96,6 +102,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 12px;
 }
 
 
@@ -158,8 +165,21 @@ nav{
     overflow: hidden;
     box-shadow: 0 8px 16px rgba(0,0,0,1);
     margin-bottom: 20px;
+    animation: animate-profile-pic 800ms 200ms backwards ; /*starts at 0% */
 
-    
+}
+
+@keyframes animate-profile-pic{ /*this is to animate */
+    0%{
+        transform: scale(0);
+    }
+    80%{
+        transform: scale(1.1);
+    }
+
+    100%{
+        transform: scale(1);
+    }
 }
 
 .about-me__picture{
@@ -168,20 +188,36 @@ nav{
     padding-top: 7px;
 }
 
-.about-me__info--para{
-    font-size: 15px;
+.about-me__info--title {
+    margin-bottom: 16px;
+    animation: fade-up 650ms 400ms backwards;
+  }
+  .about-me__info--para {
+    font-size: 18px;
     margin-bottom: 28px;
-}
-
-.about-me__info--title{
-    margin-bottom: 15px;
-}
-
-.about-me__link{
+    animation: fade-up 650ms 600ms backwards;
+  }
+  
+  .about-me__link {
     font-size: 20px;
     color:#FF69B4;
     padding: 0 16px;
-}
+  }
+  
+  .about-me__links {
+    animation: fade-up 650ms 800ms backwards;
+  }
+  
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
 .about-me__img--container {
     flex: 1;
@@ -192,6 +228,36 @@ nav{
 
 .about-me__img{
     width: 100%;
+    animation: fade-in 1200ms 800ms backwards;
+}
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+.wave{
+    display: inline-block; 
+    animation: animate-wave 500ms infinite ease-in-out;
+}
+
+@keyframes animate-wave{
+    0%{
+        transform: rotate(0);
+    }
+
+    50%{
+        transform: rotate(30deg);
+    }
+
+    100%{
+        transform: rotate(0);
+    }
 }
 
 /* Technology stack */
@@ -225,6 +291,7 @@ nav{
 
 .language_list{
     display: flex;
+    justify-content: center;
     width: 100%;
 }
 
@@ -381,4 +448,66 @@ footer {
 .footer__anchor:hover .footer__logo--popper{
     transform: translateX(60px);
     opacity: 1;
+}
+/* Small phones, tablets, large smartphones */
+@media (max-width: 768px) {
+    nav{
+        height:68px ;
+    }
+
+    h1{
+    font-size:28px ;
+    }
+
+    .about-me__info--para{
+        font-size: 15px;
+    }
+
+    .language{
+        width: calc(100%/2); /* to have 2 on each row */
+    }
+
+    .project__description--para{
+        font-size: 15px;
+    }
+
+    .project__description{
+        padding: 30px;
+        left: 30px;
+    }
+
+}
+
+/* Small phones */
+
+@media (max-width: 480px) {
+    .nav__link:not(:last-child) { 
+      display: none; /* if not last child (contact), display none  */
+    }
+
+    .project__description{
+        padding: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .project__description--para{
+        display: none;
+    }
+
+    .project__description--links{
+        display: flex;
+        justify-content: center;
+    }
+
+.project__description--title{
+    font-size: 30px;
+    line-height: 1;
+    text-align: center;
+}
+
+    .project__description--sub-title{
+        text-align: center;
+        margin:12px ;
+    }
 }
